@@ -236,10 +236,36 @@ Usage:
         Example: Transfer CSN
  
         javascript
- 
 
- 
         const { PublicKey, Transaction } = require('@solana/web3.js');
  
         // Add transfer logic here 
 <br>
+
+# Contributions
+ 
+Contributing (Currently only Absolute Solars Dev Team possible open-source after Launch)
+ 
+Open-source Devs! Please follow these steps:
+ 
+//removed bullet points here//
+ 
+Fork the repository and create a feature branch with your changes. Ensure code adheres to Rust best practices and Solana’s security standards. Submit a pull request with a clear description of your contribution. Issues can be reported via GitHub Issues—focus on bugs, feature requests, or security enhancements.
+ 
+Security
+
+    Audits: Conducted by CyberScope and CertiK or reputable sources.
+    Bounties: Report vulnerabilities to earn $1,000-$50,000 (CSN).
+    Contact: devnickk@proton.me
+<br>
+
+# License
+This project is licensed under the MIT License. See LICENSE for details.
+ 
+Resources
+ 
+    Website: CryptoSun.ca
+    Whitepaper: CSN Whitepaper
+    Solana Docs: docs.solana.com
+    Contact: devnickk@proton.me
+    @Absolute Solar & Crypto inc.
