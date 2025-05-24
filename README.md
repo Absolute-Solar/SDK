@@ -1,4 +1,7 @@
 # CryptoSun SDK
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Latest Release](https://img.shields.io/github/v/release/Absolute-Solar/cryptosun-vote)]()
+
 Client library and examples for dApps to interact with the CryptoSun program library. Application development on Solana blockchain etc.
 
 # Technical Details
