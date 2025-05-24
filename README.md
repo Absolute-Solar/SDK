@@ -18,10 +18,10 @@ Client library and examples for dApps to interact with the CryptoSun program lib
 <a>https://www.dialect.to/</a><br>
 
 # Features
-- CryptoSun Token Management: Transfer CSN, check balances, and interact with token accounts.
-- Staking: Lock CSN to earn rewards and contribute to network stability.
-- (Future) Governance: Participate in community-driven decision-making.
-- (Future) Energy Trading: Trade excess solar energy in a decentralized marketplace.
+1.) CryptoSun Token Management: Transfer CSN, check balances, and interact with token accounts.
+2.) Staking: Lock CSN to earn rewards and contribute to network stability.
+3.) (Future) Governance: Participate in community-driven decision-making.
+4.) (Future) Energy Trading: Trade excess solar energy in a decentralized marketplace.
 
 # Installation
 To integrate the Absolute Solar SDK into your Rust project, add the following to your <br>
@@ -32,8 +32,8 @@ Cargo.toml:
 
 # Prerequisites
 
-- Rust and Cargo: Install from rust-lang.org.
-- Solana CLI Tools: Install from solana.com for network interactions.
+1.) Rust and Cargo: Install from rust-lang.org.
+2.) Solana CLI Tools: Install from solana.com for network interactions.
 
 # Quick Start
 Here’s a basic example of staking CryptoSun tokens using the SDK:
@@ -62,14 +62,14 @@ For detailed API usage, see the API Documentation.
 # Security
 When using the SDK, prioritize security:
 
-- Private Keys: Never hardcode or expose private keys. Use environment variables or secure key management systems.
-- Audits: The SDK and its smart contracts are audited by industry leaders (e.g., CyberScope, CertiK) to ensure robustness.
-- Bug Bounty: Report vulnerabilities to our bug bounty program for rewards.
+1.) Private Keys: Never hardcode or expose private keys. Use environment variables or secure key management systems.
+2.) Audits: The SDK and its smart contracts are audited by industry leaders (e.g., CyberScope, CertiK) to ensure robustness.
+3.) Bug Bounty: Report vulnerabilities to our bug bounty program for rewards.
 
 # Documentation
 
-- API Reference: Full documentation is available at docs.solarcrypto.ca (placeholder; update with actual link).
-- Whitepaper: Learn more about the Absolute Solar ecosystem in the CryptoSun Whitepaper.
+1.) API Reference: Full documentation is available at docs.solarcrypto.ca (placeholder; update with actual link).
+2.) Whitepaper: Learn more about the Absolute Solar ecosystem in the CryptoSun Whitepaper.
 
 # Contributing
 We welcome contributions to the Absolute Solar SDK! To get involved:
