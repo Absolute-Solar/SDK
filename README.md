@@ -62,20 +62,20 @@ For detailed API usage, see the API Documentation.
 # Security
 When using the SDK, prioritize security:
 
-1.) Private Keys: Never hardcode or expose private keys. Use environment variables or secure key management systems. 
-2.) Audits: The SDK and its smart contracts are audited by industry leaders (e.g., CyberScope, CertiK) to ensure robustness. 
+1.) Private Keys: Never hardcode or expose private keys. Use environment variables or secure key management systems. <br>
+2.) Audits: The SDK and its smart contracts are audited by industry leaders (e.g., CyberScope, CertiK) to ensure robustness. <br>
 3.) Bug Bounty: Report vulnerabilities to our bug bounty program for rewards.
 
 # Documentation
 
-1.) API Reference: Full documentation is available at docs.solarcrypto.ca (placeholder; update with actual link). 
+1.) API Reference: Full documentation is available at docs.solarcrypto.ca (placeholder; update with actual link). <br>
 2.) Whitepaper: Learn more about the Absolute Solar ecosystem in the CryptoSun Whitepaper.
 
 # Contributing
 We welcome contributions to the Absolute Solar SDK! To get involved:
 
-1.) Clone the Repository: git clone https://github.com/AbsoluteSolarCrypto/absolute-solar-sdk.git 
-2.) Build: Run cargo build to compile the SDK.
+1.) Clone the Repository: git clone https://github.com/AbsoluteSolarCrypto/absolute-solar-sdk.git <br>
+2.) Build: Run cargo build to compile the SDK. <br>
 3.) Test: Run cargo test for unit tests, or cargo test --features integration with a Solana test validator (solana-test-validator).
 
 Submit issues or pull requests via our GitHub repository. Review our Contributing Guidelines and Code of Conduct before contributing.
