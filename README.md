@@ -2,26 +2,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/Absolute-Solar/cryptosun-vote)]()
 
-Client library and examples for dApps to interact with the CryptoSun program library. Application development on Solana blockchain etc.
-
-# Technical Details
- 
-    Blockchain: Solana
-    Throughput: ~65,000 TPS (peak 700,000 TPS)
-    Cryptography: Ed25519 (128-bit security)
-    Consensus: Proof of History (PoH) + Proof of Stake (PoS) + Tower BFT
-    Programming: Rust, compiled to BPF bytecode
-    Serialization: Borsh (150-200 byte tx size)
-    Fees: Base 0.000005 SOL/signature, prioritization adjustable
- 
-# Smart Contracts
- 
-    Token: Defines CSN (100M supply, 9 decimals, 1M CSN/year minting).
-    Staking: Locks 42M CSN, rewards via Reward = 0.0001 · Stake · (EnergyFactor + UptimeFactor + MaintenanceFactor).
-    Governance: 4M CSN, vested Months 13-24, 2/3 vote consensus.
-    Burn: Reduces supply (e.g., 3.5M CSN/year by Year 6).
-    Dividend: Airdrops based on Dividends through Company revenue.
-    Future: Maintenance (IoT-driven), Energy trading (LMP pricing).
+Client library and examples for dApps to interact with the CryptoSun program library. Application development on the Solana blockchain. The Absolute Solar SDK is a Rust-based library that enables developers to seamlessly interact with the Absolute Solar ecosystem on the Solana blockchain. This SDK provides tools to manage the CryptoSun token (CSN), participate in staking, and engage with the decentralized infrastructure network (DePIN) that powers solar energy production, heating systems, and Bitcoin mining.
 
 # References 
 <a>https://solana.stackexchange.com/</a><br>
@@ -35,240 +16,75 @@ Client library and examples for dApps to interact with the CryptoSun program lib
 <a>https://beta.solpg.io/</a><br>
 <a>https://education.github.com/git-cheat-sheet-education.pdf</a><br>
 <a>https://www.dialect.to/</a><br>
- 
-# Installation(Windows)
-Ref: <a>https://learn.microsoft.com/en-us/windows/wsl/install<a>
 
-    bash
-    wsl --install
-    wsl
- 
-Now follow the rest of the Linux installation
- 
-# Installation(Linux)
-Download VS Code:
-Ref: <a>https://code.visualstudio.com/download</a>
-<br>
- 
-VS code Extensions:
+# Features
+- CryptoSun Token Management: Transfer CSN, check balances, and interact with token accounts.
+- Staking: Lock CSN to earn rewards and contribute to network stability.
+- (Future) Governance: Participate in community-driven decision-making.
+- (Future) Energy Trading: Trade excess solar energy in a decentralized marketplace.
 
-    dependi
-    crates
-    dev containers
-    docker
-    github co-pilot
-    github co-pilot chat
-    github pull requests
-    julia
-    material icon theme
-    pine script
-    prettier code
-    rainbow csv
-    react native
-    react-native/react
-    rust
-    rust-syntax
-    rust-analyzer
-<br>
- 
-Download Dependencies:
+# Installation
+To integrate the Absolute Solar SDK into your Rust project, add the following to your <br>
+Cargo.toml:
 
-    Rust: cargo --version >= 1.70
-    Solana CLI: solana --version >= 1.18
-    Node.js: node --version >= 16 (for tools)
-    Git: git --version
-    Anchor CLI: anchor --version
-<br>
- 
-Quick Install <a>https://solana.com/docs/intro/installation</a>
+    [dependencies]
+    absolute-solar-sdk = "0.1.0"
 
-    curl --proto '=https' --tlsv1.2 -sSfL https://raw.githubusercontent.com/solana-developers/solana-install/main/install.sh | bash
-<br>
- 
-Download Rust:
+# Prerequisites
 
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-<br>    
- 
-Run the following command to reload your PATH environment variable to include Cargo's bin directory:
+- Rust and Cargo: Install from rust-lang.org.
+- Solana CLI Tools: Install from solana.com for network interactions.
 
-    . "$HOME/.cargo/env"
-<br>
- 
-To verify that the installation was successful, check the Rust version:
+# Quick Start
+Here’s a basic example of staking CryptoSun tokens using the SDK:
 
-    rustc --version
-<br>
- 
-Install the Solana CLI:
- 
-    sh -c "$(curl -sSfL https://release.anza.xyz/stable/install)"
-<br>
- 
-Add Path variable: 
+    use absolute_solar_sdk::{Client, Wallet};
+    
+    fn main() {
+        // Initialize a client connected to Solana mainnet
+        let client = Client::new("https://api.mainnet-beta.solana.com");
 
-    export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
-    solana --version
-<br>
- 
-To update:
+    // Load a wallet from a secret key file
+    let wallet = Wallet::from_secret_key("path/to/secret/key");
 
-    agave-install update
-<br>
- 
-Install Anchor CLI:
- 
-    cargo install --git https://github.com/coral-xyz/anchor avm --force
-    avm --version
-<br>
- 
-To Update: 
+    // Define the amount of CSN to stake
+    let amount = 10_000;
 
-    avm install latest
-    avm use latest
-<br>
- 
-Node install:
+    // Stake the tokens
+    match client.stake_crypto_sun(&wallet, amount) {
+        Ok(()) => println!("Successfully staked {} CSN", amount),
+        Err(e) => println!("Staking failed: {:?}", e),
+     }
+    }
 
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-<br>
+For detailed API usage, see the API Documentation.
 
-# Solana Basic Commands
+# Security
+When using the SDK, prioritize security:
 
-    solana config get
-    solana config set --url mainnet-beta
-    solana config set --url devnet
-    solana config set --url localhost
-    solana config set --url testnet
-<br>
- 
-Create a wallet: 
- 
-    solana-keygen new
-    solana address
-<br>
- 
-Airdrop SOL:
+- Private Keys: Never hardcode or expose private keys. Use environment variables or secure key management systems.
+- Audits: The SDK and its smart contracts are audited by industry leaders (e.g., CyberScope, CertiK) to ensure robustness.
+- Bug Bounty: Report vulnerabilities to our bug bounty program for rewards.
 
-    solana config set -ud
-    solana airdrop 2
-    solana balance
-<br>    
- 
-Run Local Validator:
+# Documentation
 
-    solana-test-validator
-    solana config set -ul
-<br>
- 
-# Setup(Bash)
- 
-<p>Clone Repo</p>
-<p>Install dependencies</p>
-<p>Set up Next.js</p>
-<p>Set up Node</p>
-<p>Configure Solana</p>
-<p>Deploy Contracts</p>
-<br>
- 
-Clone the Repository: 
- 
-    git clone https://github.com/rednickk1/CryptoSun.git
-    cd CrytpoSun
-<br>
- 
-Install Dependencies:
+- API Reference: Full documentation is available at docs.solarcrypto.ca (placeholder; update with actual link).
+- Whitepaper: Learn more about the Absolute Solar ecosystem in the CryptoSun Whitepaper.
 
-    cargo build --release
-    npm install
-<br>
- 
-Setting up Next.js Environment:
- 
-    npx create-solana-dapp
-<br>
- 
-Configure Next.js:
+# Contributing
+We welcome contributions to the Absolute Solar SDK! To get involved:
 
-    Project name:
-    Preset:
-    UI Lib:
-    Anchor Template:
-    cd /your-project-directory
-<br>
- 
-Web Front End:
+1.) Clone the Repository: git clone https://github.com/AbsoluteSolarCrypto/absolute-solar-sdk.git
+2.) Build: Run cargo build to compile the SDK.
+3.) Test: Run cargo test for unit tests, or cargo test --features integration with a Solana test validator (solana-test-validator).
 
-    npm i
-    npm run dev
- 
-Will now be running on localhost: <a>http://localhost:3000</a>
-<br>
- 
-# Setting up Solana Validator:
-install phantom wallet
-<a>https://phantom.com/</a>
-<br>
- 
-Change to devnet or testnet then run on terminal:
- 
-    solana-test-validator
-<br>
- 
-Configure Solana:
-
-    solana config set --url https://api.devnet-beta.solana.com
-    solana-keygen new
-<br>
- 
-Deploy Contracts:
- 
-    solana program deploy target/deploy/csn_token.so
-<br>
- 
-Usage:
- 
-    #![allow(unexpected_cfgs)] to avoid unwanted cfg errors
- 
-    Compile: cargo build 
- 
-    Test: cargo test
- 
-    Interact: Use Solana CLI or SDK (e.g., @solana/web3.js) to call contracts.
- 
-        Example: Transfer CSN
- 
-        javascript
-
-        const { PublicKey, Transaction } = require('@solana/web3.js');
- 
-        // Add transfer logic here 
-<br>
-
-# Contributions
- 
-Contributing (Currently only Absolute Solars Dev Team possible open-source after Launch)
- 
-Open-source Devs! Please follow these steps:
- 
-//removed bullet points here//
- 
-Fork the repository and create a feature branch with your changes. Ensure code adheres to Rust best practices and Solana’s security standards. Submit a pull request with a clear description of your contribution. Issues can be reported via GitHub Issues—focus on bugs, feature requests, or security enhancements.
- 
-Security
-
-    Audits: Conducted by CyberScope and CertiK or reputable sources.
-    Bounties: Report vulnerabilities to earn $1,000-$50,000 (CSN).
-    Contact: devnickk@proton.me
-<br>
+Submit issues or pull requests via our GitHub repository. Review our Contributing Guidelines and Code of Conduct before contributing.
 
 # License
-This project is licensed under the MIT License. See LICENSE for details.
- 
-Resources
- 
-    Website: CryptoSun.ca
-    Whitepaper: CSN Whitepaper
-    Solana Docs: docs.solana.com
-    Contact: devnickk@proton.me
-    @Absolute Solar & Crypto inc.
+This SDK is released under the MIT License.
+
+# Support
+For questions or assistance, contact us at nick@solarcrypto.ca or visit solarcrypto.ca.
+
+This SDK evolves with the Absolute Solar ecosystem. Watch this repository for updates on governance, energy trading, and more!
+
