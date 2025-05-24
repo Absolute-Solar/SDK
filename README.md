@@ -84,7 +84,7 @@ Submit issues or pull requests via our GitHub repository. Review our Contributin
 This SDK is released under the MIT License.
 
 # Support
-For questions or assistance, contact us at nick@solarcrypto.ca or visit <a src="https://solarcrypto.ca>.
+For questions or assistance, contact us at nick@solarcrypto.ca or visit <a>https://solarcrypto.ca</a>.
 
 This SDK evolves with the Absolute Solar ecosystem. Watch this repository for updates on governance, energy trading, and more!
 
