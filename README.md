@@ -1,5 +1,5 @@
 # CryptoSun SDK
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/Mit-%202.0-blue.svg)](LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/Absolute-Solar/cryptosun-vote)]()
 
 Client library and examples for dApps to interact with the CryptoSun program library. Application development on the Solana blockchain. The Absolute Solar SDK is a Rust-based library that enables developers to seamlessly interact with the Absolute Solar ecosystem on the Solana blockchain. This SDK provides tools to manage the CryptoSun token (CSN), participate in staking, and engage with the decentralized infrastructure network (DePIN) that powers solar energy production, heating systems, and Bitcoin mining.
