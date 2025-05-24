@@ -18,9 +18,9 @@ Client library and examples for dApps to interact with the CryptoSun program lib
 <a>https://www.dialect.to/</a><br>
 
 # Features
-1.) CryptoSun Token Management: Transfer CSN, check balances, and interact with token accounts.
-2.) Staking: Lock CSN to earn rewards and contribute to network stability.
-3.) (Future) Governance: Participate in community-driven decision-making.
+1.) CryptoSun Token Management: Transfer CSN, check balances, and interact with token accounts. <br>
+2.) Staking: Lock CSN to earn rewards and contribute to network stability. <br>
+3.) (Future) Governance: Participate in community-driven decision-making. <br>
 4.) (Future) Energy Trading: Trade excess solar energy in a decentralized marketplace.
 
 # Installation
@@ -32,7 +32,7 @@ Cargo.toml:
 
 # Prerequisites
 
-1.) Rust and Cargo: Install from rust-lang.org.
+1.) Rust and Cargo: Install from rust-lang.org. <br>
 2.) Solana CLI Tools: Install from solana.com for network interactions.
 
 # Quick Start
@@ -62,19 +62,19 @@ For detailed API usage, see the API Documentation.
 # Security
 When using the SDK, prioritize security:
 
-1.) Private Keys: Never hardcode or expose private keys. Use environment variables or secure key management systems.
-2.) Audits: The SDK and its smart contracts are audited by industry leaders (e.g., CyberScope, CertiK) to ensure robustness.
+1.) Private Keys: Never hardcode or expose private keys. Use environment variables or secure key management systems. 
+2.) Audits: The SDK and its smart contracts are audited by industry leaders (e.g., CyberScope, CertiK) to ensure robustness. 
 3.) Bug Bounty: Report vulnerabilities to our bug bounty program for rewards.
 
 # Documentation
 
-1.) API Reference: Full documentation is available at docs.solarcrypto.ca (placeholder; update with actual link).
+1.) API Reference: Full documentation is available at docs.solarcrypto.ca (placeholder; update with actual link). 
 2.) Whitepaper: Learn more about the Absolute Solar ecosystem in the CryptoSun Whitepaper.
 
 # Contributing
 We welcome contributions to the Absolute Solar SDK! To get involved:
 
-1.) Clone the Repository: git clone https://github.com/AbsoluteSolarCrypto/absolute-solar-sdk.git
+1.) Clone the Repository: git clone https://github.com/AbsoluteSolarCrypto/absolute-solar-sdk.git 
 2.) Build: Run cargo build to compile the SDK.
 3.) Test: Run cargo test for unit tests, or cargo test --features integration with a Solana test validator (solana-test-validator).
 
